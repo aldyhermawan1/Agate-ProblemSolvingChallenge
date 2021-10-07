@@ -13,9 +13,8 @@ public class BallControl : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         ResetBall();
-        Invoke("PushBall", 1);
+        Invoke("PushBall", 1); //Remove this to rollback to Problem 1
     }
-
 
     private void ResetBall()
     {
