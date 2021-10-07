@@ -19,7 +19,7 @@ public class BallControl : MonoBehaviour
     private void Update()
     {
         //Problem 4 Start
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        /*if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Vector3 position = transform.position;
             position.y += 0.5f;
@@ -42,8 +42,13 @@ public class BallControl : MonoBehaviour
             Vector3 position = transform.position;
             position.y -= 0.5f;
             transform.position = position;
-        }
+        }*/
         //Problem 4 End
+
+        //Problem 5 Start
+        Vector2 destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = Vector3.MoveTowards(transform.position, destination, 5f * Time.deltaTime);
+        //Problem 5 End
     }
 
     private void ResetBall()
