@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour
 {
-    public float speedX;
-    public float speedY;
-
     private Rigidbody2D rb2d;
 
     private void Start()
@@ -24,6 +21,6 @@ public class BallControl : MonoBehaviour
 
     private void PushBall()
     {
-        rb2d.AddForce(new Vector2(speedX, speedY));
+        rb2d.AddForce(new Vector2(10f, 5f));
     }
 }
