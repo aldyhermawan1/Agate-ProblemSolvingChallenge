@@ -14,12 +14,12 @@ public class BoxSpawner : MonoBehaviour
     {
         spawnedBox = new List<GameObject>(0);
 
-        //GenerateBox
+        //GenerateBox for Problem 6
         int boxCount = Random.Range(10, 30);
         for (int i = 0; i <= boxCount; i++)
         {
-            float posX = Random.Range(-7.5f, 7.5f);
-            float posY = Random.Range(-3.5f, 3.5f);
+            float posX = Random.Range(-boxTemplateWidth / 2, boxTemplateWidth / 2);
+            float posY = Random.Range(-boxTemplateHeight / 2, boxTemplateHeight / 2);
             SpawnBox(posX, posY);
         }
     }
@@ -33,9 +33,9 @@ public class BoxSpawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.DrawLine(transform.position + new Vector3(7.5f, boxTemplateHeight / 2, 0), transform.position + new Vector3(7.5f, -boxTemplateHeight / 2, 0), Color.green);
-        Debug.DrawLine(transform.position + new Vector3(-7.5f, boxTemplateHeight / 2, 0), transform.position + new Vector3(-7.5f, -boxTemplateHeight / 2, 0), Color.green);
-        Debug.DrawLine(transform.position + new Vector3(boxTemplateWidth / 2, 3.5f), transform.position + new Vector3(-boxTemplateWidth / 2, 3.5f), Color.green);
-        Debug.DrawLine(transform.position + new Vector3(boxTemplateWidth / 2, -3.5f), transform.position + new Vector3(-boxTemplateWidth / 2, -3.5f), Color.green);
+        Debug.DrawLine(transform.position + new Vector3(boxTemplateWidth / 2, boxTemplateHeight / 2, 0), transform.position + new Vector3(boxTemplateWidth / 2, -boxTemplateHeight / 2, 0), Color.green);
+        Debug.DrawLine(transform.position + new Vector3(-boxTemplateWidth / 2, boxTemplateHeight / 2, 0), transform.position + new Vector3(-boxTemplateWidth / 2, -boxTemplateHeight / 2, 0), Color.green);
+        Debug.DrawLine(transform.position + new Vector3(boxTemplateWidth / 2, boxTemplateHeight / 2), transform.position + new Vector3(-boxTemplateWidth / 2, boxTemplateHeight / 2), Color.green);
+        Debug.DrawLine(transform.position + new Vector3(boxTemplateWidth / 2, -boxTemplateHeight / 2), transform.position + new Vector3(-boxTemplateWidth / 2, -boxTemplateHeight / 2), Color.green);
     }
 }
